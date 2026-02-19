@@ -9,7 +9,21 @@ function App() {
   const [input, setInputValue] = useState(0);
 
   function clickEventHandling(value) {
-    console.log(value);
+    //setInputValue(value)
+    //setOutputValue(value)
+
+    if(value == 'C'){
+      setInputValue(0);
+      setOutputValue(0);
+    }else if(value == 'AC'){
+
+    }else if(value == '='){
+      setOutputValue(eval(input));
+      setInputValue(0)
+      
+    }else{
+      input == 0 ? setInputValue(value) : setInputValue(input + value)
+    }
   }
   return (
     <div className="container">

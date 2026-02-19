@@ -12,17 +12,20 @@ function App() {
     //setInputValue(value)
     //setOutputValue(value)
 
-    if(value == 'C'){
+    if (value == "C") {
       setInputValue(0);
       setOutputValue(0);
-    }else if(value == 'AC'){
-
-    }else if(value == '='){
+    } else if (value == "AC") {
+      if (input != 0) {
+        input.length == 1
+          ? setInputValue(0)
+          : setInputValue(input.slice(0, input.length - 1));
+      }
+    } else if (value == "=") {
       setOutputValue(eval(input));
-      setInputValue(0)
-      
-    }else{
-      input == 0 ? setInputValue(value) : setInputValue(input + value)
+      setInputValue(0);
+    } else {
+      input == 0 ? setInputValue(value) : setInputValue(input + value);
     }
   }
   return (
